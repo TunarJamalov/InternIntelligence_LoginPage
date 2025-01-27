@@ -1,0 +1,416 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #f3f2f2;
+}
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    opacity: 0.85;
+}
+label {
+    font-size: 12.5px;
+    color: #000;
+    opacity: 0.8;
+    font-weight: 400;
+}
+form {
+    padding: 40px 30px;
+    background: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    width: 300px;
+}
+form h4 {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, .5);
+}
+form h4 span {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+}
+form p {
+    line-height: 155%;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000;
+    opacity: 0.65;
+    font-weight: 400;
+    max-width: 200px;
+    margin-bottom: 40px;
+}
+a.discrete {
+    color: rgba(0, 0, 0, .4);
+    font-size: 14px;
+    border-bottom: solid 1px rgba(0, 0, 0, .0);
+    padding-bottom: 4px;
+    margin-left: auto;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+a.discrete:hover {
+    border-bottom: solid 1px rgba(0, 0, 0, .2);
+}
+button {
+    -webkit-appearance: none;
+    width: auto;
+    min-width: 120px;
+    border-radius: 24px;
+    text-align: center;
+    padding: 12px 30px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: all 0.3s ease;
+    outline: none;
+}
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+input {
+    font-size: 16px;
+    padding: 20px 0px;
+    height: 56px;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, .1);
+    background: #fff;
+    width: 280px;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    color: #000;
+    font-weight: 400;
+    -webkit-appearance: none;
+}
+input:focus {
+    border-bottom: solid 1px #b69de6;
+    outline: 0;
+    box-shadow: 0 2px 6px -8px rgba(182, 157, 230, .45);
+}
+.floating-label {
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+.floating-label label {
+    position: absolute;
+    top: calc(50% - 7px);
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding-left: 44px;
+}
+.floating-label input {
+    width: calc(100% - 44px);
+    margin-left: auto;
+    display: flex;
+    padding-left: 40px;
+}
+.floating-label .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.5);
+}
+.floating-label .icon svg {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    opacity: 0.15;
+    transition: all 0.3s ease;
+}
+.floating-label .icon svg path {
+    transition: all 0.3s ease;
+}
+.floating-label input:not(:placeholder-shown) {
+    padding: 28px 0px 12px 0px;
+}
+.floating-label input:not(:placeholder-shown) + label {
+    transform: translateY(-10px);
+    opacity: 0.7;
+}
+.floating-label input:valid:not(:placeholder-shown) + label + .icon svg {
+    opacity: 1;
+}
+.floating-label input:valid:not(:placeholder-shown) + label + .icon svg path {
+    fill: #b69de6;
+}
+.floating-label input:not(:valid):not(:focus) + label + .icon {
+    animation-name: shake-shake;
+    animation-duration: 0.3s;
+}
+@keyframes shake-shake {
+    0% {
+        transform: translateX(-3px);
+   }
+    20% {
+        transform: translateX(3px);
+   }
+    40% {
+        transform: translateX(-3px);
+   }
+    60% {
+        transform: translateX(3px);
+   }
+    80% {
+        transform: translateX(-3px);
+   }
+    100% {
+        transform: translateX(0px);
+   }
+}
+.session {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    width: auto;
+    height: auto;
+    margin: auto auto;
+    background: transparent;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, .12);
+}
+.left {
+    width: 300px;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.left img {
+    height: 40px;
+    width: auto;
+    margin: 20px;
+}
+.right {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .session {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    button {
+        min-width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    h4 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .icon {
+        left: 8px;
+    }
+}
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+
+.btn-link {
+    color: #007bff; /* Buton rengi */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: 600; /* Yazı kalınlığı */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    transition: color 0.3s ease; /* Geçiş efekti */
+}
+
+.btn-link:hover {
+    color: #0056b3; /* Hover durumunda renk değişimi */
+    text-decoration: underline; /* Hover durumunda alt çizgi ekle */
+}
+
+.btn-link:focus {
+    outline: none; /* Kenar çizgisi yok */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Focus durumunda gölge efekti */
+}
+
+body.dark-mode .form-container {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark-mode .btn {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #555;
+}
+
+body.dark-mode label {
+    color: rgba(255, 255, 255, 0.54); /* Light gray for labels in dark mode */
+}
+body.dark-mode input{
+    color: black;
+}
+body.dark-mode h4,
+body.dark-mode p {
+    color: #ffffff; /* White text for headings and paragraphs in dark mode */
+}
+
+/* Custom Checkbox Styles */
+.form-check-input {
+    position: absolute;
+    opacity: 0; /* Hide the default checkbox */
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-checkbox-label {
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkbox */
+    cursor: pointer;
+}
+
+.custom-checkbox-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Width of the custom checkbox */
+    height: 20px; /* Height of the custom checkbox */
+    border: 2px solid #007bff; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: transparent; /* Background color */
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-label::before {
+    background-color: #007bff; /* Background color when checked */
+    border-color: #007bff; /* Border color when checked */
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-label::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Checkmark color */
+    border-width: 0 2px 2px 0; /* Checkmark shape */
+    transform: rotate(45deg); /* Rotate to form a checkmark */
+}
+
+/* Yeni animasyon stilleri ekleniyor */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.left img {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Alert bileşeni için özel stiller */
+.alert {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: opacity 0.5s ease;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert.d-none {
+    display: none;
+}
