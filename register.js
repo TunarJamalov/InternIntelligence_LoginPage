@@ -1,8 +1,8 @@
-// Import the Firebase SDK
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
-// Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyBSnWqKEsBFt4FZzYtCpSGXbyTs7_-DLfk",
   authDomain: "login-page-5127e.firebaseapp.com",
@@ -13,17 +13,17 @@ const firebaseConfig = {
   measurementId: "G-8MYNEVYF1D"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Elements
+
 const loginForm = document.getElementById('loginFormElement');
 const registerForm = document.getElementById('registerFormElement');
 const showRegister = document.getElementById('showRegister');
 const showLogin = document.getElementById('showLogin');
 
-// Switch Forms
+
 showRegister.addEventListener('click', () => {
   loginForm.classList.add('d-none');
   registerForm.classList.remove('d-none');
@@ -34,7 +34,7 @@ showLogin.addEventListener('click', () => {
   loginForm.classList.remove('d-none');
 });
 
-// Login Form Submission
+
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -49,7 +49,7 @@ loginForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Register Form Submission
+
 registerForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
